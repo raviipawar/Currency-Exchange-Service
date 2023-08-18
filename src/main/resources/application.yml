@@ -39,3 +39,12 @@ resilience4j.retry:
             maxAttempts: 5
             waitDuration: 2s
             enable-exponential-backoff: true
+        
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name}, %X{traceId:-},%X{spanId:-}]"

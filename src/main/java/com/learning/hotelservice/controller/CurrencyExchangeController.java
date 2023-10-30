@@ -29,7 +29,7 @@ public class CurrencyExchangeController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(exchangeValue1);
 	}
 	
-	@GetMapping("/currency-exchanges/from/{from}/to/{to}")
+	@GetMapping("/currency-exchange/from/{from}/to/{to}")
 	public ExchangeValue retrieveExchangeValue(@PathVariable String from, @PathVariable String to) {
 		ExchangeValue exchangeValue = currencyExchangeService.findByFromAndTo(from, to);
 		logger.info("retrieveExchangeValue method callled with {}  to {}", from , to);
